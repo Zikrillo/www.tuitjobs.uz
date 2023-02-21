@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+}
+.header__nav {
+    height: 73px;
+    background-color: white;
+    box-shadow: 5px 0px 10px rgba(51, 51, 51, 0.212);
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    padding-right: 60px;
+    justify-content: space-between;
+    width: 100vw;
+    top: 0;
+}
+body{
+    background-color:#f6edfc;
+}
+.header__nav-username {
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.header__nav-username-logo {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(327deg, #D24DFF, #00698C);
+    font-family: Montserrat, sans-serif;
+    color: white;
+    font-weight: 600;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+main{
+    margin-top: 100px;
+    padding: 20px;
+}
+.regform{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    grid-gap: 10px;
+    margin-top: calc(50vh - 500px);
+    background-color: white;
+    padding: 50px;
+    border-radius: 5px;
+}
+.authform{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    grid-gap: 10px;
+    margin-top: calc(50vh - 500px);
+    background-color: white;
+    padding: 50px;
+    border-radius: 5px;
+    height:min-content;
+}
+.d-none{
+    display: none;
+}
+input[type=text],input[type=tel],input[type=password]{
+    border: 1px solid #8f8f8f;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 200px;
+}
+input[type=text]:focus,input[type=tel]:focus,input[type=password]:focus{
+    outline: none;
+    border: 1px solid #d79aff;
+}
+.regform div{
+    grid-column: 1/3;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.authform div{
+    grid-column: 1/3;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+button{
+    padding: 10px;
+    background-color: #8058D2;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: #9369e9;
+    cursor: pointer;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+.link{
+    
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.radiogroup{
+    display: flex;
+    justify-content: space-between;
+}
