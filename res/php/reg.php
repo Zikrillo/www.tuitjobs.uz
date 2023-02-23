@@ -2,7 +2,9 @@
 $data  =  json_decode ( file_get_contents ( 'php://input' ),  true );
 $login = $data["login"];
 $password = $data["password"];
-
+$username = $data["username"];
+$surname = $data["surname"];
+$phone = $data["phone"];
 
 function connectDB($query){
     $servername = "localhost";
@@ -25,11 +27,11 @@ function connectDB($query){
     $conn->close();
 }
 
-function registrate($login, $password){
+function registrate($login, $password, $username, $surname, $phone){
     $pass = password_hash($password,PASSWORD_DEFAULT);
-    $sql = "INSERT INTO users (login, password) VALUES ('$login', '$pass');"; 
+    $sql = "INSERT INTO users (login, password, name, surname, phone) VALUES ('$login', '$pass', '$username', '$surname', '$phone');"; 
     connectDB($sql);
 };
 
-registrate($login, $password);
+registrate($login, $password, $username, $surname, $phone);
 ?>
