@@ -37,6 +37,7 @@ class ProjectServices{
             if(data === "1"){
                 localStorage.setItem("login",login);
                 localStorage.setItem("password", password);
+                localStorage.setItem("username", name + " " + surname);
                 window.location.href = "http://www.tuitjobs.uz/user.html";
             }else{
                 alert("Sizning malumotlaringzda hatolik bor!");
