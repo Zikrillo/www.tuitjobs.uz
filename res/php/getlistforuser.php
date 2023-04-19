@@ -1,7 +1,5 @@
 <?php
-$fetchData = file_get_contents('php://input');
-$data = json_decode($fetchData, true);
-$author = $data['login'];
+
 // Подключение к базе данных MySQL
 $mysqli = mysqli_connect('localhost', 'admin', 'zikrillo11', 'tuitjobs');
 
@@ -11,7 +9,7 @@ if ($mysqli->connect_error) {
 }
 
 // Выполнение SQL-запроса для получения данных из базы данных
-$sql = "SELECT * FROM vacancy WHERE author='$author'";
+$sql = "SELECT * FROM vacancy";
 $result = $mysqli->query($sql);
 
 // Проверка наличия результатов
@@ -22,12 +20,18 @@ if ($result->num_rows > 0) {
     
     while ($row = $result->fetch_assoc()) {
         if($row['header'] != "")
-        echo '<div class="response-list__vacancy-item" id="'.$row["id"].'">
-        <div class="response-list__vacancy-item-header">
-           '.$row["header"].'
+        echo '<div class="main__vacancy-list-item">
+        <div class="main__vacancy-list-header">
+        '.$row["header"].'
         </div>
-        <div class="response-list__vacancy-item-description">
+        <div class="main__vacancy-list-sub-header">
         '.$row["comment"] .'
+        </div>
+        <div class="main__vacancy-list-apply">
+            <div class="main__vacancy-list-apply-salary">
+            '.$row["salary"] .' SOM
+            </div>
+            <button class="main__vacancy-apply" id="'.$row["id"] .'">Topshirish</button>
         </div>
     </div>';
 
