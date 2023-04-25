@@ -11,8 +11,8 @@
 
 <body>
     <script>
-        (localStorage.getItem("login").length > 0 && localStorage.getItem("password").length > 0 && localStorage.getItem("username").length > 0)?
-window.location.replace("http://www.tuitjobs.uz/user.html"):null;
+        if (localStorage.getItem("login") && localStorage.getItem("password")) (localStorage.getItem("login").length > 0 && localStorage.getItem("password").length > 0 && localStorage.getItem("username").length > 0) ?
+            window.location.replace("http://www.tuitjobs.uz/user.html") : null;
     </script>
     <header>
         <nav class="header__nav">
@@ -23,7 +23,7 @@ window.location.replace("http://www.tuitjobs.uz/user.html"):null;
 
             </div>
         </nav>
-    </header>
+    </header>   
     <main>
         <div class="regform ">
             <div>Registratsiya</div>
@@ -46,7 +46,7 @@ window.location.replace("http://www.tuitjobs.uz/user.html"):null;
                 </div>
             </div>
             <span class="link">Avtorizatsiya</span>
-            <button id="reg-button" style="display: flex; align-items: center;justify-content: center;"> 
+            <button id="reg-button" style="display: flex; align-items: center;justify-content: center;">
                 Ro'yhatdan o'tish
                 <img class="d-none spinner" src="res/images/Spinner-0.4s-51px.svg" height="20" alt="">
             </button>
@@ -57,7 +57,8 @@ window.location.replace("http://www.tuitjobs.uz/user.html"):null;
             <input type="password" id="auth-password" placeholder="Password">
             <div></div>
             <span class="link">Registratsiya</span>
-            <button id="auth-button" style="display: flex; align-items: center;justify-content: center;">Kirish<img class="d-none spinner" src="res/images/Spinner-0.4s-51px.svg" height="20" alt=""></button>
+            <button id="auth-button" style="display: flex; align-items: center;justify-content: center;">Kirish<img
+                    class="d-none spinner" src="res/images/Spinner-0.4s-51px.svg" height="20" alt=""></button>
 
         </div>
     </main>
