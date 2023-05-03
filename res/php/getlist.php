@@ -3,7 +3,8 @@ $fetchData = file_get_contents('php://input');
 $data = json_decode($fetchData, true);
 $author = $data['login'];
 // Подключение к базе данных MySQL
-$mysqli = mysqli_connect('localhost', 'admin', 'zikrillo11', 'tuitjobs');
+include "vars.php";
+$mysqli = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
 
 // Проверка соединения с базой данных
 if ($mysqli->connect_error) {

@@ -40,6 +40,7 @@ class ProjectServices{
                 localStorage.setItem("username", name + " " + surname);
                 window.location.href = "http://www.tuitjobs.uz/user.html";
             }else{
+                console.log(data);
                 alert("Sizning malumotlaringzda hatolik bor!");
             }
         })

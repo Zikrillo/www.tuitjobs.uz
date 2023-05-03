@@ -24,7 +24,8 @@ function createVacancyFromFetch($fetchData) {
 
 function createVacancy($header, $author, $comment, $salary, $region) {
     // Подключение к базе данных
-    $conn = mysqli_connect('localhost', 'admin', 'zikrillo11', 'tuitjobs');
+    include "vars.php";
+    $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
 
     // Проверка соединения
     if (!$conn) {
@@ -47,10 +48,7 @@ function createVacancy($header, $author, $comment, $salary, $region) {
 $data  =  json_decode ( file_get_contents ( 'php://input' ),  true );
 $login = $data["login"];
 $password = $data["password"];
-$servername = "localhost";
-$dbusername = "admin";
-$dbpassword = "zikrillo11";
-$dbname = "tuitjobs";
+include "vars.php";
 
 
 $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
@@ -72,6 +70,7 @@ while ($row = mysqli_fetch_array($result)) {
 if (password_verify($password,$hashpass)) {
     createVacancyFromFetch($fetchData);
 } else {
+    echo "password";
 }
 $conn->close();
 

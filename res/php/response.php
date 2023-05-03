@@ -1,8 +1,7 @@
 <?php
-
+ include "vars.php";
 // Подключение к базе данных
-$mysqli = new mysqli('localhost', 'admin', 'zikrillo11', 'tuitjobs');
-
+$mysqli = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 // Проверка соединения
 if($mysqli->connect_error) {
     die("Ошибка подключения: " . $mysqli->connect_error);

@@ -7,10 +7,8 @@ $surname = $data["surname"];
 $phone = $data["phone"];
 
 function connectDB($query){
-    $servername = "localhost";
-    $dbusername = "admin";
-    $dbpassword = "zikrillo11";
-    $dbname = "tuitjobs";
+    include "vars.php";
+
     //Create connection
     $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
     //Check connection
