@@ -1,6 +1,7 @@
 <?
 include "vars.php";
 
+
 $fetchData = file_get_contents('php://input');
 
 function createVacancyFromFetch($fetchData) {
@@ -66,7 +67,6 @@ while ($row = mysqli_fetch_array($result)) {
 if (password_verify($password,$hashpass)) {
     createVacancyFromFetch($fetchData);
 } else {
-    echo "password";
 }
 $conn->close();
 
