@@ -48,7 +48,7 @@ class ProjectServices{
 
     authorization(login, password){
         spinner[1].classList.remove("d-none");
-        fetch(".res/php/auth.php",{
+        fetch("./res/php/auth.php",{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

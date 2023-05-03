@@ -1,9 +1,5 @@
 <?
-$servername = "localhost";
-$dbusername = "admin";
-$dbpassword = "zikrillo11";
-$dbname = "tuitjobs";
-
+include "vars.php";
 
 $fetchData = file_get_contents('php://input');
 
