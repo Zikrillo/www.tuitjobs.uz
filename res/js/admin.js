@@ -3,7 +3,7 @@ const login = localStorage.getItem("login");
 const password = localStorage.getItem("password");
 
 
-fetch("http://www.tuitjobs.uz/res/php/response.php", {
+fetch("./res/php/response.php", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ sendButton.addEventListener("click", () => {
         comment: comment,
         salary: salary
     }
-    fetch("http://www.tuitjobs.uz/res/php/query.php", {
+    fetch("./res/php/query.php", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             comment: "comment",
             salary: "salary"
         }
-        fetch("http://www.tuitjobs.uz/res/php/getlist.php", {
+        fetch("./res/php/getlist.php", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 e.addEventListener("click", r=>{
                     console.log(e.id);
                     document.querySelector(".response-list__vacancy-responsed-user-list").innerHTML = "";
-                    fetch("http://www.tuitjobs.uz/res/php/response.php", {
+                    fetch("./res/php/response.php", {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'

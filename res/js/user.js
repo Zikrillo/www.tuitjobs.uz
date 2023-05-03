@@ -8,8 +8,8 @@ const
 document.addEventListener("DOMContentLoaded", () => {
     profilename.innerText = username;
     logo.innerText = username.split(" ")[0][0].toUpperCase() + username.split(" ")[1][0].toUpperCase();
-    fetch("http://www.tuitjobs.uz/res/php/getlistforuser.php", {
-        method: "POST",
+    fetch("./res/php/getlistforuser.php", {
+        method: "POST", 
         headers: {
             'Content-Type': 'application/json'
         },
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".main__vacancy-list").innerHTML = response;
         document.querySelectorAll(".main__vacancy-apply").forEach(e => {
             e.addEventListener("click", r => {
-                fetch("http://www.tuitjobs.uz/res/php/apply.php", {
+                fetch("./res/php/apply.php", {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
