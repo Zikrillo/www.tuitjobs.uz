@@ -1,4 +1,4 @@
-const 
+const
     username = localStorage.getItem("username"),
     profilename = document.querySelector(".header__nav-header"),
     logo = document.querySelector(".header__nav-username-logo"),
@@ -6,10 +6,10 @@ const
     password = localStorage.getItem("password");
 
 document.addEventListener("DOMContentLoaded", () => {
+    logo.innerText = username?.split(" ")[0][0].toUpperCase() + username?.split(" ")[1][0].toUpperCase();
     profilename.innerText = username;
-    logo.innerText = username.split(" ")[0][0].toUpperCase() + username.split(" ")[1][0].toUpperCase();
     fetch("./res/php/getlistforuser.php", {
-        method: "POST", 
+        method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        login: login, 
+                        login: login,
                         password: password,
                         id: e.id
                     })
-                }).then(response=>response.text()).then(response=>{
+                }).then(response => response.text()).then(response => {
                     alert(response);
                 })
             })

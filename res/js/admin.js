@@ -1,7 +1,10 @@
 const sendButton = document.querySelector("#vacancy-header-block__button");
 const login = localStorage.getItem("login");
 const password = localStorage.getItem("password");
-
+const 
+    username = localStorage.getItem("username"),
+    profilename = document.querySelector(".header__nav-header"),
+    logo = document.querySelector(".header__nav-username-logo");
 
 fetch("./res/php/response.php", {
         method: "POST",
@@ -33,7 +36,8 @@ sendButton.addEventListener("click", () => {
 })
 
 document.addEventListener("DOMContentLoaded", ()=>{
-
+        logo.innerText = username?.split(" ")[0][0].toUpperCase() + username?.split(" ")[1][0].toUpperCase();
+        profilename.innerText = username;
         const obj = {
             login: login,
             password: password,

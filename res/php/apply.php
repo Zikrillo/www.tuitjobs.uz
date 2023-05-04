@@ -25,10 +25,7 @@ function chechAuth(){
 }
 
 if(chechAuth()){
-    $servername = "localhost";
-    $dbusername = "admin";
-    $dbpassword = "zikrillo11";
-    $dbname = "tuitjobs";
+    include "vars.php";
     
     
     $fetchData = file_get_contents('php://input');
@@ -46,7 +43,8 @@ if(chechAuth()){
     
     function createVacancy($author, $id) {
         // Подключение к базе данных
-        $conn = mysqli_connect('localhost', 'admin', 'zikrillo11', 'tuitjobs');
+        include "vars.php";
+        $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
     
         // Проверка соединения
         if (!$conn) {
